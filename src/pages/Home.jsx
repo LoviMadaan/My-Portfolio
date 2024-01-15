@@ -2,10 +2,9 @@ import React, { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import Loader from '../components/Loader'
 import {  Island, Sky, Bird, Plane } from "../models";
+import HomeInfo from '../components/HomeInfo';
 
- {/* <div className='absolute top-30 left-0 right-0 z-10 flex intems-center justify-center'>
-        POPUP
-      </div> */}
+
 
 const Home = () => {
   const [isRotating, setIsRotating] = useState(false);
@@ -41,6 +40,9 @@ const Home = () => {
   const [planeScale, planePosition ] = adjustPlaneForScreenSize ();
   return (
     <section className='w-full h-screen relative'>
+       <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
+        {currentStage && <HomeInfo currentStage={currentStage} />}
+      </div>
       <Canvas 
       className={`w-full h-screen bg transparent ${
         isRotating ? 'cursor-grabbing' : 'curson-grab'
