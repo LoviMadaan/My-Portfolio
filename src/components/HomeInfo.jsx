@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { arrow } from '../assets/icons'
 
 const InfoBox = ({ text, link, btnText }) => (
   <div className='info-box'>
-    {text}
-    <Link to={link}>
+    <p className='font-medium sm:text:xl text-center'>{text}</p>
+    
+    <Link to={link} className='neo-brutalism-white neo-btn'>
       {btnText}
+      <img src={arrow} className='w-4 h-4 object-contain'/>
     </Link>
   </div>
 )
@@ -30,10 +33,18 @@ const renderContent = {
     />    
   ),
   3: (
-    <h1>3</h1>
+    <InfoBox 
+    text= 'Over the months, I have designed a wide variety of projects both individually and collaboratively with people from all sorts of different cultures'
+    link='/projects'
+    btnText='Visit my Portfolio'
+    />  
   ),
   4: (
-    <h1>4</h1>
+    <InfoBox 
+    text= "If you're looking for someone with a passion for coding, a commitment to diversity and inclusion, and a drive to succeed. I'd love to sit down with you this week to talk about what I could bring to your development team."
+    link='/contact'
+    btnText="Let's Talk"
+    />  
   ),
 }
 
