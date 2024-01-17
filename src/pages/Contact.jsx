@@ -1,10 +1,11 @@
 import React, { useState, useRef } from 'react'
+import emailjs from '@emailjs/browser'
 
 
 const Contact = () => {
   const formRef = useRef(null);
   const [form, setForm] = useState({name: "", email: "", message: ""})
-  const [isLoading, setisLoaing] = useState(false);
+  const [isLoading, setIsLoaing] = useState(false);
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value  })
   };
@@ -12,7 +13,7 @@ const Contact = () => {
   const handleBlur = () => {};
   const handleSubmit = (e) => {
     e.preventDefault();
-    setisLoaing
+    setIsLoaing(true);
   };
   return (
     <section className='relative flex lg:flex-row flex-col max-container'>
