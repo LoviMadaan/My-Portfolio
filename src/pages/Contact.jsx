@@ -14,6 +14,10 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoaing(true);
+
+    emailjs.sendForm(
+      'service_z68gqxj'
+    )
   };
   return (
     <section className='relative flex lg:flex-row flex-col max-container'>
